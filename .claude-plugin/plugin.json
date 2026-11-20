@@ -1,0 +1,9 @@
+{
+  "name": "job-search",
+  "version": "0.1.0",
+  "author": { "name": "KevinDMontoya", "url": "https://github.com/KevinDMontoya" },
+  "repository": "https://github.com/KevinDMontoya/job-search-plugin",
+  "license": "MIT",
+  "description": "A job-hunting crew for Claude Code: one sweep session per job site, a control panel, a daily scan of new ads, a Gmail watcher for employer answers and interviews, and one Google Sheet that tracks everything. Starts with Denmark (Jobindex, Jobnet, WorkInDenmark, LinkedIn, TheHub, Indeed, staffing agencies).",
+  "keywords": ["jobs", "job search", "applications", "denmark", "copenhagen", "tracker"]
+}

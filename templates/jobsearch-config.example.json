@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "chat_language": "English",
+  "folder": "C:\\Users\\<you>\\Documents\\JobSearch",
+  "cv_file": "C:\\Users\\<you>\\Documents\\JobSearch\\CV.pdf",
+  "country": "DK",
+  "sheet_id": "<filled in by setup>",
+  "sheet_url": "<filled in by setup>",
+  "sites": ["jobindex", "jobnet", "workindenmark", "linkedin", "thehub", "indeed", "agencies"],
+  "site_settings": {
+    "jobindex": { "region_path": "storkoebenhavn", "subids": [] },
+    "agencies": { "agencies": ["adecco", "randstad", "manpower", "studentconsulting"] }
+  },
+  "has_mitid": false,
+  "sessions": {
+    "control_panel": "<local_... filled in by setup>",
+    "jobindex": "<local_...>"
+  },
+  "schedule": {
+    "daily_scan": "12:00",
+    "gmail_check_minutes": 30,
+    "cleanup": "20:15"
+  },
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "profiles_dir": "C:\\Users\\<you>\\.agent-browser",
+  "auto_apply": false,
+  "push_notifications": true
+}

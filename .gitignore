@@ -1,0 +1,9 @@
+# Personal files must never be committed
+PROFILE.md
+jobsearch-config.json
+*.pdf
+INTERVIEW_*.md
+PENDING_TRACKER_UPDATES_*.md
+JOB_LOG.md
+scan-terms.txt
+.claude/

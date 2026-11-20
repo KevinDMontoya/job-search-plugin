@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "job-search",
+  "description": "Job-hunting crew for Claude Code: sweeps per job site, control panel, daily scan, Gmail watcher and a Google Sheet tracker.",
+  "owner": {
+    "name": "KevinDMontoya"
+  },
+  "plugins": [
+    {
+      "name": "job-search",
+      "description": "Sweeps per job site, control panel, daily scan, Gmail watcher and a Google Sheet tracker. Starts with Denmark.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
