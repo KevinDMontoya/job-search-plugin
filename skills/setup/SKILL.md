@@ -69,6 +69,10 @@ Do this yourself with PowerShell. Each install can show a Windows "allow changes
    - the page text comes back between `AGENT_BROWSER_PAGE_CONTENT` markers
    - there is no "Chrome … is behind the current stable release" warning. If there is, 🚨 ask the user to open Chrome → Help → About Google Chrome, let it update, click Relaunch, and then test again.
    If the test fails, read `agent-browser --help` and fix it. Retry with the profile flags removed to narrow the problem down.
+6. Claude in Chrome (the user taps human checks there; also the fallback when a connector is down):
+   - Load `mcp__claude-in-chrome__list_connected_browsers` with ToolSearch and call it. If a browser is connected, it is done.
+   - Otherwise open the extension page in the user's Chrome: `Start-Process "<chrome_path>" "https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn"`. Say: "🚨 In the Chrome window that opened: click Add to Chrome, then Add extension. Click the puzzle icon at the top right and pin Claude. Click the Claude icon and sign in with the same Claude account as this app. Tell me done."
+   - Check again. If it is still not connected, tell the user: "In this app open Settings → Connectors (or Customize → Connectors), find Claude in Chrome and turn it on." It is optional: if the user skips it, human checks are tapped in the agent-browser window instead.
 
 ## Step 5. Create the tracker sheet
 Follow "Creating the sheet" in `reference/tracker.md`, with one queue tab per chosen site. Save `sheet_id` and `sheet_url` (`https://docs.google.com/spreadsheets/d/<id>`). Tell the user: "Your tracker is ready: <link>. Open it in the Google Sheets app on your phone; the Dashboard tab updates by itself."

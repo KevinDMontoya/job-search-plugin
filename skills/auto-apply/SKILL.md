@@ -31,7 +31,7 @@ The sweep picks offers from its queue and applies without asking each time. Only
 - Use the employer's own route: the portal form, "Continue with LinkedIn/Google" (basic profile only; anything more = hold and ask), or email to the address printed in the ad. Tick only the box needed for THIS application, and say no to optional consents.
 - A form field asking for CPR, ID, passport or bank details = hold the row (⏸️ "needs the user: <field>") and move on.
 - Letters: only facts from the CV and PROFILE.md, in the letter style PROFILE.md asks for.
-- agent-browser may run headless. If a site shows a block or a human check, retry once headed. If the user has Claude in Chrome, try once there too. If it is still blocked, hold the row (⏸️ with the reason), tell the control panel, and move on.
+- If a site shows a block or a human check, follow "When the browser is blocked" in `reference/browser-and-logins.md`. If the user has not tapped the check by the end of the round, hold the row (⏸️ with the reason), tell the control panel, and move on.
 - Hard limits stay: never type passwords or codes, never create password accounts, never solve CAPTCHAs, never pay, never email a recruiter as a fallback, and every rule in "Security" in the rules skill.
 - Report each application to the control panel in at most 5 lines: company and title, why, route, what was sent, result. Skips go on one line. Do not show offer details in the sweep's chat while in this mode.
 
