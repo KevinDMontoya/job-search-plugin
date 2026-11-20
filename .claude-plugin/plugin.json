@@ -1,6 +1,6 @@
 {
   "name": "job-search",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": { "name": "KevinDMontoya", "url": "https://github.com/KevinDMontoya" },
   "repository": "https://github.com/KevinDMontoya/job-search-plugin",
   "license": "MIT",

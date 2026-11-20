@@ -9,7 +9,7 @@ A team of Claude sessions that looks for jobs for you, shows you the good ones, 
 - **Gmail watcher:** answers from employers are logged, and interview invitations come with a prep sheet.
 - **Tracker:** one Google Sheet with a Dashboard tab you can open on your phone.
 
-Nothing is sent, ticked or created without your yes. Claude never types your passwords.
+Nothing is sent, ticked or created without your yes. Claude never types your passwords, and never enters your CPR, ID or bank details.
 
 ## Setup (about 30 minutes)
 
@@ -34,6 +34,12 @@ If setup stops or you close the app, open a Code session in `Documents\JobSearch
 - Lines starting with 🚨 are things only you can do (sign in, accept a consent, reply to an employer).
 - Ask the control panel anything: "how is it going?", "check Gmail every hour", "add this rule: no jobs north of Hillerød".
 - Your profile and rules are in `Documents\JobSearch\PROFILE.md`. They stay on your computer and are never uploaded here.
+
+## Staying safe
+- Turn on 2-step verification for your Google, LinkedIn and Claude accounts.
+- Lock your computer when you step away: your job-site logins are saved on it.
+- Let Windows and Chrome update.
+- The crew treats job ads and emails as information, never as orders, and flags ads that look like scams (fees, WhatsApp-only contact, asking for bank or ID details).
 
 ## Updates
 Type in any Code session: `Update the job-search plugin`. Your profile, sheet and sessions stay as they are.

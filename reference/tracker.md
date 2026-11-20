@@ -60,7 +60,7 @@ Write labels in column A and formulas in column B, starting at A1. Replace the q
 - `Applied (last 7 days)`: `=COUNTIFS(Applications!A2:A,"✅*",Applications!C2:C,">="&(TODAY()-7))`
 - `Skipped`: `=COUNTIF(Applications!A2:A,"⏭️*")`
 - `Screened out`: `=COUNTIF(Applications!A2:A,"⛔*")`
-- `Waiting on me`: `=COUNTIF(Applications!A2:A,"⏳*")`
+- `Waiting on me` (⏳ rows are on the queue tabs; one COUNTIF per active queue): `=COUNTIF('Queue – Jobindex'!A2:A,"⏳*")+COUNTIF('Queue – Jobnet'!A2:A,"⏳*")`
 - One line per queue, `New in Queue – Jobindex`: `=COUNTIF('Queue – Jobindex'!A2:A,"🆕*")`
 - `Answers (total)`: `=COUNTA(Responses!A2:A)`
 - `Interview invitations`: `=COUNTIF(Responses!F2:F,"📅*")`

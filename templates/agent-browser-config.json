@@ -1,3 +1,5 @@
 {
-  "args": "--no-startup-window,--restore-last-session"
+  "args": "--no-startup-window,--restore-last-session",
+  "executablePath": "<chrome_path>",
+  "contentBoundaries": true
 }

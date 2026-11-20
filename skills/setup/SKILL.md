@@ -15,6 +15,7 @@ Work through the steps in order. Keep a short checklist in the chat (✅ done, �
 - Platform: this setup is written for Windows and the Claude desktop app (Code tab). On macOS, translate the PowerShell steps to bash and Chrome paths to `/Applications/Google Chrome.app`.
 - Permission mode: if the session is not in Auto mode, tell the user once: "Tip: switch the mode below the message box to Auto, or you will get many 'Allow?' questions during setup." Carry on either way.
 - Folder: if the current folder is not already a job-search folder, create `JobSearch` inside it (usually Documents\JobSearch) and use that as the job-search folder from now on. Every file and session of the crew lives there.
+- If the folder path contains `OneDrive`, tell the user in one line: "Your Documents folder is synced to OneDrive, so your profile and CV are also stored in your OneDrive. That is fine if your Microsoft account is protected; otherwise pick a folder outside OneDrive." The browser profiles (`profiles_dir`) always stay outside synced folders.
 
 ## Step 1. Language and the interview
 1. Ask first: "Which language should I talk to you in?" Use it for everything after this, and save it as `chat_language`.
@@ -30,6 +31,7 @@ Work through the steps in order. Keep a short checklist in the chat (✅ done, �
    - letter tone
 3. CV: ask them to drag their CV (PDF) into the chat, or to drop it into the job-search folder. Open the folder for them with `mcp__ccd_host__reveal_path` if that tool exists. Save it in the folder as `CV.pdf` (keep the original name if they prefer). Read it, then fill "Experience and education" from the CV and check it with the user.
 4. Write `PROFILE.md` in the job-search folder. Show a short summary and ask "Anything to change?" Fix, then move on.
+   Never write CPR, personal ID or tax numbers, passport numbers, bank details or passwords into PROFILE.md. If the user offers them, say they are not needed: forms that require them are left for the user to fill in.
 
 ## Step 2. Sites and schedule
 Ask in one message:
@@ -61,14 +63,19 @@ Explain in one line: the crew runs on this computer, so the computer must be on 
 Do this yourself with PowerShell. Each install can show a Windows "allow changes" box. Tell the user "🚨 click Yes if Windows asks" before you start.
 1. Node.js: `node --version`. If it is missing, run `winget install -e --id OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements`, then refresh PATH in the same command (`$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')`).
 2. Google Chrome: look in `$env:ProgramFiles\Google\Chrome\Application\chrome.exe`, `${env:ProgramFiles(x86)}\...` and `$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe`. If none has it, run `winget install -e --id Google.Chrome --accept-source-agreements --accept-package-agreements`. Save the path as `chrome_path`.
-3. agent-browser: `npm i -g agent-browser`, then `agent-browser --version`.
-4. Profiles folder `profiles_dir` = `$env:USERPROFILE\.agent-browser`. Create it. Copy `templates/open-login.ps1` and `templates/agent-browser-config.json` (as `config.json`) into it. If either file already exists there and differs, do not overwrite: keep both by saving yours as `*.job-search` and tell the user.
-5. Smoke test, with the sandbox disabled and the two env vars from `reference/browser-and-logins.md`: `agent-browser --session setup-test --headed open https://example.com`, read the title, then `agent-browser --session setup-test close`. If it fails, read `agent-browser --help` and fix it. Retry with the profile flags removed to narrow the problem down.
+3. agent-browser, pinned to the version this plugin was tested with: `npm i -g agent-browser@0.42.0`, then `agent-browser --version`. Do not install other versions or extra packages. Never run `agent-browser install`: the crew uses the user's own Chrome.
+4. Profiles folder `profiles_dir` = `$env:USERPROFILE\.agent-browser`. Create it. Copy `templates/open-login.ps1` into it. Copy `templates/agent-browser-config.json` as `config.json` with `<chrome_path>` replaced by the real path (JSON-escaped backslashes). If either file already exists there and differs, do not overwrite: keep both by saving yours as `*.job-search` and tell the user.
+5. Smoke test, with the sandbox disabled and the three env vars from `reference/browser-and-logins.md`: `agent-browser --session setup-test --headed open https://example.com`, read the title, then `agent-browser --session setup-test close`. Check that:
+   - the page text comes back between `AGENT_BROWSER_PAGE_CONTENT` markers
+   - there is no "Chrome … is behind the current stable release" warning. If there is, 🚨 ask the user to open Chrome → Help → About Google Chrome, let it update, click Relaunch, and then test again.
+   If the test fails, read `agent-browser --help` and fix it. Retry with the profile flags removed to narrow the problem down.
 
 ## Step 5. Create the tracker sheet
 Follow "Creating the sheet" in `reference/tracker.md`, with one queue tab per chosen site. Save `sheet_id` and `sheet_url` (`https://docs.google.com/spreadsheets/d/<id>`). Tell the user: "Your tracker is ready: <link>. Open it in the Google Sheets app on your phone; the Dashboard tab updates by itself."
 
-For Jobindex, find the category `subid`s that match the jobs in PROFILE.md (see `reference/sites/jobindex.md`), show the chosen categories by name in one line, and save them in `site_settings.jobindex`.
+For Jobindex, find the region path and the category `subid`s that match PROFILE.md (see `reference/sites/jobindex.md`). Show the chosen categories by name in one line, and save both in `site_settings.jobindex` (`region_path`, `subids`).
+
+Keep the sheet private: never change its sharing.
 
 ## Step 6. Write the config and the folder rules
 - Write `jobsearch-config.json` in the job-search folder, shaped like `templates/jobsearch-config.example.json`, with every value filled from steps 0 to 5. Leave `sessions` empty for now. `auto_apply` is false.
@@ -120,4 +127,9 @@ Send one short message:
   - New ads arrive every day at <time>; employer emails are checked every <n> minutes.
   - Your phone: the tracker's Dashboard tab in the Google Sheets app.
 - 🚨 anything still to do (a skipped sign-in, an agency profile).
+- Keeping it safe, in four short lines (the user does these; never change security settings yourself):
+  - Turn on 2-step verification for Google, LinkedIn and Claude. These accounts can now act for you.
+  - Lock the computer with a password or PIN when you step away. The saved job-site logins live on it.
+  - Let Windows and Chrome update. Restart Chrome when it asks.
+  - The crew never asks for passwords, CPR or bank details. Treat any job ad or email that does as a scam.
 - Changing things later: tell the control panel, for example "check Gmail every hour", "add this rule: …", or "pause the Indeed sweep".

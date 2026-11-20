@@ -2,6 +2,8 @@
 
 Every job-search session reads this file. It is the only place where my personal rules live. Edit it any time, or tell the control panel "add this rule: …".
 
+Never put passwords, CPR / ID / tax numbers, passport numbers or bank details here. Forms that need them are left for me to fill in.
+
 ## About me (used in letters and forms)
 - Name:
 - Email (the Gmail connected to Claude):
