@@ -4,7 +4,7 @@ The Danish state's job portal for international candidates, with mostly English-
 
 ## Searching
 - Search the user's region from PROFILE.md. For Copenhagen, use the Capital Region; Bornholm is also in it, so include or exclude it by the user's commute.
-- First backlog: the last month of ads, soonest deadline first, then by update time. Daily scan: ads published or updated in the last 1 to 2 days.
+- First backlog: the last month of ads, soonest deadline first, then by update time. Daily scan: ads published or updated in the scan window (see the daily-scan skill).
 - Read the full ad before deciding.
 
 ## Applying

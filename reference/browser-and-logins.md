@@ -17,9 +17,16 @@
 ## When the browser is blocked
 A human check (CAPTCHA, "are you a robot", press-and-hold), a page that refuses headless browsers, or a button or box you cannot click:
 1. Retry once with `--headed` (close the session first, same `--profile`).
-2. Still blocked: open the same page with Claude in Chrome (the user's own Chrome, tools `mcp__claude-in-chrome__*`), in your own tab group, and 🚨 ask the user to tap the check there: "Tap the check in the Chrome tab I just opened (<site>), then tell me done."
+2. Still blocked: open the same page with Claude in Chrome (the user's own Chrome, tools `mcp__claude-in-chrome__*`), in your own tab group, and send the control panel a 🚨 line for the user: "Tap the check in the Chrome tab just opened (<site>)."
+   Do not wait for an answer message: re-check the page yourself about every 30 seconds for up to 10 minutes, and carry on as soon as the check is gone.
 3. Continue that application in Claude in Chrome after the user's tap, then close your tabs. Never solve the check yourself.
 If Claude in Chrome is not connected, ask the user to tap it in the headed agent-browser window instead, or hold the row (⏸️) and move on.
+
+## Form tips
+- If a form ignores values set with `fill` (the field looks filled but the form says it is empty, or clears it), click the field and type the value with `type` instead.
+- If a step freezes on a file upload, skip that upload and use the CV the form already has saved (portals and LinkedIn often keep one).
+- After the final submit, skip optional "create an account" or "save your profile" steps.
+- Voluntary disclosure questions = "prefer not to say". Marketing and newsletter boxes stay unticked.
 
 ## Safety
 - The sandbox is disabled only for `agent-browser` commands. Run every other command with the sandbox on.

@@ -4,7 +4,7 @@ Denmark's largest job board. Found-on dot: 🟠. Queue tab: "Queue – Jobindex"
 
 ## Searching
 - Search by region and category. The user's region comes from PROFILE.md (Copenhagen area = Region Hovedstaden, path `storkoebenhavn`).
-  - Example: `https://www.jobindex.dk/jobsoegning/storkoebenhavn?jobage=2` (jobage = ads from the last N days; use 30 for a first backlog, 1 or 2 for the daily scan).
+  - Example: `https://www.jobindex.dk/jobsoegning/storkoebenhavn?jobage=2` (jobage = ads from the last N days; use 30 for a first backlog, and for the daily scan the smallest N that covers the scan window, at least 1).
 - Categories are `subid` numbers in the URL, for example `&subid=74&subid=83`. Setup picks the subids that match the user's wanted jobs.
   - To find them, open the search page's category filter and read each category's subid from the filter links.
   - Store the list in `jobsearch-config.json` under `site_settings.jobindex.subids`.

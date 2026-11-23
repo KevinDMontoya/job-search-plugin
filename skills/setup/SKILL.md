@@ -40,6 +40,7 @@ Ask in one message:
 - How often to check Gmail for employer answers. Default every 30 minutes; any number of minutes from 15 up.
 - What time of day to scan for new ads. Default 12:00.
 - Whether they want phone notifications for interview invitations. Default yes.
+- Quiet hours: when no phone alerts should come (they are held and sent in the morning). Default 22:00 to 07:00. Save as `schedule.quiet_hours`.
 Explain in one line: the crew runs on this computer, so the computer must be on with the Claude app open for scans and Gmail checks. Missed runs happen when the app opens again.
 
 ## Step 3. Connect Google (Gmail, Sheets, Drive, Calendar)
@@ -111,7 +112,7 @@ Background (required): one paragraph saying this is the user's job-search crew, 
 
 Write each returned `local_…` session id into `sessions` in `jobsearch-config.json`, keyed `control_panel`, `jobindex`, `jobnet`, `workindenmark`, `linkedin`, `thehub`, `indeed`, `agencies`.
 
-Then ask once: "Do you want to follow the control panel from your phone (Claude app, Remote Control)? Interview alerts arrive there too." If yes, turn on Remote Control for the control panel session with `mcp__ccd_session_mgmt__set_remote_control` (loaded with ToolSearch). Phone notifications may not arrive while the desktop app is open, so this is the reliable way to see alerts on the phone.
+Then ask once: "Do you want to follow the control panel from your phone (Claude app, Remote Control)? All offers and interview alerts arrive there." If yes, turn on Remote Control for the control panel session with `mcp__ccd_session_mgmt__set_remote_control` (loaded with ToolSearch). Phone notifications may not arrive while the desktop app is open, so this is the reliable way to see alerts on the phone.
 
 If start_session is not available, tell the user to open a new Code session in the job-search folder per sweep and type the prompt above. Ask them to tell you when done, then read each new session's id with `mcp__ccd_session_mgmt__list_sessions`.
 
@@ -126,8 +127,8 @@ If a task id is taken, use the free id the tool suggests and note it in the conf
 Send one short message:
 - ✅ what was set up (profile, connectors, sheet link, sites signed in, sessions opened, scheduled tasks with times).
 - How it works from now on, in four lines:
-  - Each sweep shows you up to 2 offers at a time in its own chat; you answer apply or skip there.
-  - The control panel is where you ask how things are going and give new rules.
+  - Everything comes to ONE chat, the control panel: offers from every site (up to 2 at a time per site, with full summaries) and anything you need to do. You answer apply or skip there, and it tells the sweeps.
+  - The control panel is also where you ask how things are going, start apply rounds ("2 each") and give new rules.
   - New ads arrive every day at <time>; employer emails are checked every <n> minutes.
   - Your phone: the tracker's Dashboard tab in the Google Sheets app.
 - 🚨 anything still to do (a skipped sign-in, an agency profile).

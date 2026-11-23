@@ -11,6 +11,8 @@ Found-on dot: 🟤. Queue tab: "Queue – Agencies". One profile per agency: `<a
 
 ## Searching
 - Read the agencies' public job listings.
+- If a job page is only an embedded widget (HR-ON, Temponizer and similar), find the underlying public list URL (often `<company>.hr-on.com`) and fetch that directly.
+- Agencies that post jobs only on Facebook: read their Facebook page in the user's own signed-in browser (Claude in Chrome), READ ONLY. You may open "See more" on posts; never like, comment, message, follow, share or click links. Ad id: `fb-<YYYY-MM-DD>-<short title>`.
 - In the Company column, write the agency name plus the client if it is stated.
 - Agencies repost on Jobnet and Jobindex: check duplicates and mark 🔁.
 

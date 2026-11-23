@@ -3,8 +3,8 @@
 A team of Claude sessions that looks for jobs for you, shows you the good ones, applies when you say yes, and keeps track of everything in one Google Sheet. It starts with Denmark: Jobindex, Jobnet, WorkInDenmark, LinkedIn, TheHub, Indeed and staffing agencies.
 
 **What you get**
-- **Sweeps:** one Claude chat per job site. It finds suitable ads, shows you up to 2 at a time with a full summary, and applies after your yes.
-- **Control panel:** a chat where you ask how things are going and give new rules ("skip all night shifts").
+- **Sweeps:** one Claude session per job site. It finds suitable ads, sends them to the control panel with a full summary, and applies after your yes.
+- **Control panel:** the one chat you use. Every offer and every question comes here; you answer once, and it passes your answer on. You also ask how things are going and give new rules ("skip all night shifts").
 - **Daily scan:** new ads are added every day by themselves.
 - **Gmail watcher:** answers from employers are logged, and interview invitations come with a prep sheet.
 - **Tracker:** one Google Sheet with a Dashboard tab you can open on your phone.
@@ -30,9 +30,9 @@ You need Claude Pro, a Google account (Gmail), and a Windows computer. The compu
 If setup stops or you close the app, open a Code session in `Documents\JobSearch` and type `/job-search:setup`. It continues where it stopped.
 
 ## Using it
-- Each sweep chat shows you offers. Answer **apply** or **skip**.
+- The control panel shows you offers from every site, up to 2 at a time per site. Answer **apply** or **skip** there, or start a round: "apply to the best 2 on each site".
 - Lines starting with 🚨 are things only you can do (sign in, accept a consent, reply to an employer).
-- Ask the control panel anything: "how is it going?", "check Gmail every hour", "add this rule: no jobs north of Hillerød".
+- Ask the control panel anything: "how is it going?", "check Gmail every hour", "no alerts before 8", "add this rule: no jobs north of Hillerød".
 - Your profile and rules are in `Documents\JobSearch\PROFILE.md`. They stay on your computer and are never uploaded here.
 
 ## Staying safe

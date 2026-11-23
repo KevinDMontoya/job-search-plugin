@@ -7,3 +7,5 @@ PENDING_TRACKER_UPDATES_*.md
 JOB_LOG.md
 scan-terms.txt
 .claude/
+SEEN_ADS.txt
+PENDING_ALERTS.md

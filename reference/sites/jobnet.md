@@ -5,7 +5,7 @@ The Danish public employment service's job board. Found-on dot: 🟣. Queue tab:
 ## Searching
 - The public search needs no login.
 - Search the newest ads in the user's area from PROFILE.md. For Copenhagen, use Region Hovedstaden plus nearby Zealand towns within the user's commute, such as Roskilde, Køge and Greve.
-- Use the last 30 days for a first backlog, and the last 1 to 2 days for the daily scan.
+- Use the last 30 days for a first backlog, and the scan window (see the daily-scan skill) for the daily scan.
 - Read the full ad before deciding.
 - Before adding an ad, check the other queue tabs: many Jobnet ads are also on Jobindex. Mark those 🔁.
 

@@ -19,7 +19,8 @@
   "schedule": {
     "daily_scan": "12:00",
     "gmail_check_minutes": 30,
-    "cleanup": "20:15"
+    "cleanup": "20:15",
+    "quiet_hours": { "from": "22:00", "to": "07:00" }
   },
   "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
   "profiles_dir": "C:\\Users\\<you>\\.agent-browser",

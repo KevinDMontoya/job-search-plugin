@@ -29,6 +29,8 @@ Answer types: `Acknowledgement`, `❌ Rejection`, `📅 Interview invitation`, `
 **Interviews**
 A Date and time | B Company | C Role | D Format and place | E Who | F Status | G Prep done | H Notes after
 
+Interview statuses: "📅 Invited, reply needed", "🧪 Test, reply needed", "🎉 Offer, reply needed", "📄 Documents requested", "✅ Confirmed", "✔️ Done", "❌ Cancelled" (rejected or cancelled while still open).
+
 **Dashboard** (formulas only; nobody writes values here). See "Dashboard formulas" below.
 
 ## Statuses
